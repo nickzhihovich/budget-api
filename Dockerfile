@@ -1,4 +1,4 @@
-FROM ruby:2.6.4
+FROM ruby:2.6.3
 ENV APP_HOME /api
 
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev
