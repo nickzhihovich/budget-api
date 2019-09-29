@@ -2,9 +2,8 @@ version: '3'
 services:
   postgres:
     image: postgres
-    environment:
-      POSTGRES_USER: marderer
-      POSTGRES_PASSWORD: 80657214
+    ports:
+      - 5432:5432
 
   api:
     build: .
