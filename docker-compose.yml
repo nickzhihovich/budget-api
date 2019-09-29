@@ -17,9 +17,6 @@ services:
       - postgres
     links:
       - postgres
-    environment:
-      RAILS_ENV: development
-      POSTGRES_DATABASE_HOST: postgres
-      POSTGRES_DATABASE_USERNAME: marderer
-      POSTGRES_DATABASE_PASSWORD: 80657214
-      POSTGRES_DATABASE_NAME: budget_api_development
+    env_file:
+      - .env
+
