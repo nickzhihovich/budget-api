@@ -1,0 +1,25 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: marderer
+      POSTGRES_PASSWORD: 80657214
+
+  api:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && rails db:create && rails db:migrate && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/api
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    links:
+      - postgres
+    environment:
+      RAILS_ENV: development
+      POSTGRES_DATABASE_HOST: postgres
+      POSTGRES_DATABASE_USERNAME: marderer
+      POSTGRES_DATABASE_PASSWORD: 80657214
+      POSTGRES_DATABASE_NAME: budget_api_development

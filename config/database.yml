@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: <%= ENV['POSTGRES_DATABASE_HOST'] %>
+  username: <%= ENV['POSTGRES_DATABASE_USERNAME'] %>
+  password: <%= ENV['POSTGRES_DATABASE_PASSWORD'] %>
+  pool: 5
+
+development:
+  <<: *default
+  database: <%= ENV['POSTGRES_DATABASE_NAME'] %>
+
+test:
+  <<: *default
+  database: trace_api_test
+
+production:
+  <<: *default
+  database: <%= ENV['POSTGRES_DATABASE_NAME'] %>
