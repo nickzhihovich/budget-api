@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  root 'test#index'
+  mount V2::Base => '/'
 end
