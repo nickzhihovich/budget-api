@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  mount V2::Base => '/'
+  mount Base => '/'
+  mount GrapeSwaggerRails::Engine => '/'
 end

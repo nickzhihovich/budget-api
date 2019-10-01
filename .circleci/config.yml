@@ -28,8 +28,8 @@ jobs:
       # Restore bundle cache
       - restore_cache:
           keys:
-            - api-bundle-v2-{{ checksum "Gemfile.lock" }}
-            - api-bundle-v2-
+            - api-bundle-v1-{{ checksum "Gemfile.lock" }}
+            - api-bundle-v1-
 
       - run:
           name: Bundle Install
@@ -37,7 +37,7 @@ jobs:
 
       # Store bundle cache
       - save_cache:
-          key: api-bundle-v2-{{ checksum "Gemfile.lock" }}
+          key: api-bundle-v1-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
 

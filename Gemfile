@@ -7,6 +7,7 @@ gem 'bootsnap', '>= 1.4.1', require: false
 gem 'grape'
 gem 'grape-entity'
 gem 'grape-swagger'
+gem 'grape-swagger-rails'
 gem 'grape_on_rails_routes'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
