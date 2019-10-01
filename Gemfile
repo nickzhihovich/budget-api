@@ -5,6 +5,7 @@ ruby '2.6.3'
 
 gem 'bootsnap', '>= 1.4.1', require: false
 gem 'devise'
+gem 'doorkeeper'
 gem 'grape'
 gem 'grape-entity'
 gem 'grape-swagger'

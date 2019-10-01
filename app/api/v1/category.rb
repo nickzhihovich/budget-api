@@ -1,8 +1,16 @@
+require 'doorkeeper/grape/helpers'
+
 module V1
   class Category < Base
+    helpers Doorkeeper::Grape::Helpers
+
+    before do
+      doorkeeper_authorize!
+    end
+
     namespace 'categories' do
       get do
-        'Hello world.'
+        'Hello test.'
       end
 
       get :test do
