@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 
 gem 'bootsnap', '>= 1.4.1', require: false
+gem 'devise'
 gem 'grape'
 gem 'grape-entity'
 gem 'grape-swagger'
