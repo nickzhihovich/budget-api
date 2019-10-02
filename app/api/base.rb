@@ -6,7 +6,8 @@ class Base < Grape::API
   format :json
   version 'v1', using: :path
 
-  mount V1::Category
+  mount Auth
+  mount Category
 
   helpers do
     def current_user
