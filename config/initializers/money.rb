@@ -1,10 +1,7 @@
-# encoding : utf-8
-
 MoneyRails.configure do |config|
-
   # To set the default currency
   #
-  # config.default_currency = :usd
+  config.default_currency = :byn
 
   # Set default bank object
   #
@@ -27,7 +24,7 @@ MoneyRails.configure do |config|
   #
   # config.amount_column = { prefix: '',           # column name prefix
   #                          postfix: '_cents',    # column name  postfix
-  #                          column_name: nil,     # full column name (overrides prefix, postfix and accessor name)
+  #                          column_name: nil,     # full column name
   #                          type: :integer,       # column type
   #                          present: true,        # column will be created
   #                          null: false,          # other options will be treated as column options
@@ -50,7 +47,7 @@ MoneyRails.configure do |config|
   #   priority:            1,
   #   iso_code:            "EU4",
   #   name:                "Euro with subunit of 4 digits",
-  #   symbol:              "€",
+  #   symbol:              "",
   #   symbol_first:        true,
   #   subunit:             "Subcent",
   #   subunit_to_unit:     10000,
