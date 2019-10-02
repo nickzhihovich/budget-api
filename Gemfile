@@ -23,8 +23,10 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'factory_bot'
   gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
+  gem 'grape-entity-matchers'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.8'
+  gem 'shoulda-matchers'
 end
 
 group :development do
@@ -34,8 +36,6 @@ group :development do
 end
 
 group :test do
-  gem 'grape-entity-matchers'
-  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
