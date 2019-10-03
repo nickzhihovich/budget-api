@@ -3,7 +3,7 @@ class CreateTransactions < ActiveRecord::Migration[6.0]
     create_table :transactions do |t|
       t.monetize :amount
       t.date :date
-      t.references :user
+      t.references :budget
       t.references :transactinable, polymorphic: true
 
       t.timestamps

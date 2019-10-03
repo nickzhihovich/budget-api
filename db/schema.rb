@@ -67,13 +67,13 @@ ActiveRecord::Schema.define(version: 2019_10_03_183330) do
     t.integer "amount_cents", default: 0, null: false
     t.string "amount_currency", default: "USD", null: false
     t.date "date"
-    t.bigint "user_id"
+    t.bigint "budget_id"
     t.string "transactinable_type"
     t.bigint "transactinable_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["budget_id"], name: "index_transactions_on_budget_id"
     t.index ["transactinable_type", "transactinable_id"], name: "index_transactions_on_transactinable_type_and_transactinable_id"
-    t.index ["user_id"], name: "index_transactions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
