@@ -6,7 +6,6 @@ module V1
 
     namespace 'categories' do
       get do
-
       end
 
       get :test do
