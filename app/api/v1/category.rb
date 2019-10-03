@@ -6,7 +6,7 @@ module V1
 
     namespace 'categories' do
       get do
-        "Hello #{current_user.email}."
+
       end
 
       get :test do
