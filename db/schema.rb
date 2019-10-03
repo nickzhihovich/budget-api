@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2019_10_03_180039) do
 
   create_table "categories", force: :cascade do |t|
     t.integer "amount_cents", default: 0, null: false
-    t.string "amount_currency", default: "BYN", null: false
+    t.string "amount_currency", default: "USD", null: false
     t.string "title"
     t.bigint "category_group_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2019_10_03_180039) do
 
   create_table "category_groups", force: :cascade do |t|
     t.integer "amount_cents", default: 0, null: false
-    t.string "amount_currency", default: "BYN", null: false
+    t.string "amount_currency", default: "USD", null: false
     t.string "title"
     t.bigint "budget_id"
     t.datetime "created_at", precision: 6, null: false
