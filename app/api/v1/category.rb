@@ -5,12 +5,6 @@ module V1
     end
 
     namespace 'categories' do
-      get do
-      end
-
-      get :test do
-        'Test endpoint.'
-      end
     end
   end
 end
