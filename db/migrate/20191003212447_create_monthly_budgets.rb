@@ -4,7 +4,6 @@ class CreateMonthlyBudgets < ActiveRecord::Migration[6.0]
       t.monetize :amount
       t.monetize :expenses
       t.references :budget
-      t.references :category_groups
       t.date :date
     end
   end
