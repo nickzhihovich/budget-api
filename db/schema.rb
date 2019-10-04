@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_03_183330) do
+ActiveRecord::Schema.define(version: 2019_10_03_212447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,18 @@ ActiveRecord::Schema.define(version: 2019_10_03_183330) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["budget_id"], name: "index_category_groups_on_budget_id"
+  end
+
+  create_table "monthly_budgets", force: :cascade do |t|
+    t.integer "amount_cents", default: 0, null: false
+    t.string "amount_currency", default: "USD", null: false
+    t.integer "expenses_cents", default: 0, null: false
+    t.string "expenses_currency", default: "USD", null: false
+    t.bigint "budget_id"
+    t.bigint "category_groups_id"
+    t.date "date"
+    t.index ["budget_id"], name: "index_monthly_budgets_on_budget_id"
+    t.index ["category_groups_id"], name: "index_monthly_budgets_on_category_groups_id"
   end
 
   create_table "oauth_access_tokens", force: :cascade do |t|
