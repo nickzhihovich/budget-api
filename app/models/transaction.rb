@@ -1,5 +1,4 @@
 class Transaction < ApplicationRecord
-  belongs_to :budget
   belongs_to :transactinable, dependent: :destroy, polymorphic: true
 
   monetize :amount_cents

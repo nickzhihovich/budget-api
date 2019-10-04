@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_04_173845) do
+ActiveRecord::Schema.define(version: 2019_10_04_194957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,12 +84,10 @@ ActiveRecord::Schema.define(version: 2019_10_04_173845) do
     t.integer "amount_cents", default: 0, null: false
     t.string "amount_currency", default: "USD", null: false
     t.date "date"
-    t.bigint "budget_id"
     t.string "transactinable_type"
     t.bigint "transactinable_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["budget_id"], name: "index_transactions_on_budget_id"
     t.index ["transactinable_type", "transactinable_id"], name: "index_transactions_on_transactinable_type_and_transactinable_id"
   end
 
