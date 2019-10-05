@@ -3,8 +3,24 @@ DatabaseCleaner.strategy = :truncation
 # then, whenever you need to clean the DB
 DatabaseCleaner.clean
 
-user = User.create!(email: 'nickzhihovich@gmail.com', password: '80657214')
+user = User.create!(email: 'nickzhihovich@gmail.com', password: 'passpass')
 budget = Budget.create!(name: 'Home', user: user)
+
+deposit = Account.create!(
+  title: 'My deposit',
+  amount_cents: 5000,
+  amount_currency: 'BYN',
+  budget: budget,
+  type: 'deposit'
+)
+
+credit = Account.create!(
+  title: 'My credit',
+  amount_cents: 2000,
+  amount_currency: 'BYN',
+  budget: budget,
+  type: 'credit'
+)
 
 category_group_learning = CategoryGroup.create!(title: 'Learning', budget: budget)
 category_group_fun = CategoryGroup.create!(title: 'Fun', budget: budget)
