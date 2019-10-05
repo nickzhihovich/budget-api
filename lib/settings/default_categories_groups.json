@@ -1,0 +1,14 @@
+[
+  {
+    "title": "House",
+    "categories": ["Software", "Home payments", "Internet", "Mobile", "Auto", "Clothing"]
+  },
+  {
+    "title": "Entertainment",
+    "categories": ["Cafes and restaurants", "Games"]
+  },
+  {
+    "title": "Quality of Life Goals",
+    "categories": ["Fitness", "Education", "Vacation"]
+  }
+]
