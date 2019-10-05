@@ -6,5 +6,5 @@ class MonthlyBudget < ApplicationRecord
   monetize :expenses_cents
 
   validates :amount_cents, :expenses_cents, :date, :category, :budget, presence: true
-  validates :date, uniqueness: { scope: %i[category budget] }
+  validates :category, uniqueness: { scope: %i[date budget] }
 end
