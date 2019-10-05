@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_04_195345) do
+ActiveRecord::Schema.define(version: 2019_10_05_065229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2019_10_04_195345) do
     t.bigint "category_id"
     t.index ["budget_id"], name: "index_monthly_budgets_on_budget_id"
     t.index ["category_id"], name: "index_monthly_budgets_on_category_id"
+    t.index ["date", "category_id", "budget_id"], name: "index_monthly_budgets_on_date_and_category_id_and_budget_id", unique: true
   end
 
   create_table "oauth_access_tokens", force: :cascade do |t|

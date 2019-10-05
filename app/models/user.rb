@@ -11,4 +11,6 @@ class User < ApplicationRecord
 
   has_many :budgets
   has_many :category_groups, through: :budgets
+
+  validates :email, presence: true
 end

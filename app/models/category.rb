@@ -2,5 +2,6 @@ class Category < ApplicationRecord
   belongs_to :category_group
   has_many :monthly_budgets
 
-  monetize :amount_cents
+  validates :title, :category_group, presence: true
+  validates :title, length: { maximum: 30 }
 end
