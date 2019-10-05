@@ -6,21 +6,21 @@ DatabaseCleaner.clean
 user = User.create!(email: 'nickzhihovich@gmail.com', password: 'passpass')
 budget = Budget.create!(name: 'Home', user: user)
 
-deposit = Account.create!(
-  title: 'My deposit',
-  amount_cents: 5000,
-  amount_currency: 'BYN',
-  budget: budget,
-  type: 'deposit'
-)
-
-credit = Account.create!(
-  title: 'My credit',
-  amount_cents: 2000,
-  amount_currency: 'BYN',
-  budget: budget,
-  type: 'credit'
-)
+# deposit = Account.create!(
+#   title: 'My deposit',
+#   amount_cents: 5000,
+#   amount_currency: 'BYN',
+#   budgets: budgets,
+#   type: 'deposit'
+# )
+#
+# credit = Account.create!(
+#   title: 'My credit',
+#   amount_cents: 2000,
+#   amount_currency: 'BYN',
+#   budgets: budgets,
+#   type: 'credit'
+# )
 
 category_group_learning = CategoryGroup.create!(title: 'Learning', budget: budget)
 category_group_fun = CategoryGroup.create!(title: 'Fun', budget: budget)
