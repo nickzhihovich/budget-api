@@ -4,4 +4,5 @@ class Category < ApplicationRecord
 
   validates :title, :category_group, presence: true
   validates :title, length: { maximum: 30 }
+  validates :title, uniqueness: { scope: :category_group_id }
 end

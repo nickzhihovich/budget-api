@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_06_084040) do
+ActiveRecord::Schema.define(version: 2019_10_06_204724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2019_10_06_084040) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category_group_id"], name: "index_categories_on_category_group_id"
+    t.index ["title", "category_group_id"], name: "index_categories_on_title_and_category_group_id", unique: true
   end
 
   create_table "category_groups", force: :cascade do |t|
@@ -54,6 +55,7 @@ ActiveRecord::Schema.define(version: 2019_10_06_084040) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["budget_id"], name: "index_category_groups_on_budget_id"
+    t.index ["title", "budget_id"], name: "index_category_groups_on_title_and_budget_id", unique: true
   end
 
   create_table "monthly_budgets", force: :cascade do |t|

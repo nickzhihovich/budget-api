@@ -27,6 +27,7 @@ group :development, :test do
   gem 'grape-entity-matchers'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.8'
+  gem 'rubocop-faker'
   gem 'shoulda-matchers'
 end
 

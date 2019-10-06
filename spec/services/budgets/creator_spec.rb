@@ -41,7 +41,7 @@ describe Budgets::Creator do
     let(:count_of_categories) do
       expected_category_groups.map{|item| item['categories']}.flatten.count
     end
-    
+
     let(:budget) { described_class.new(user: user, params: {name: budget_name }).call }
 
     it 'count of category groups' do
