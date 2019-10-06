@@ -6,11 +6,11 @@ FactoryBot.define do
     budget
 
     trait :credit do
-      type 'credit'
+      kind 'credit'
     end
 
     trait :debt do
-      type 'deposit'
+      kind 'deposit'
     end
   end
 end
