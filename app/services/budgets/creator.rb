@@ -18,7 +18,7 @@ module Budgets
     def created_params
       {
         name: params[:name],
-        user_id: user.id
+        user_id: user&.id
       }
     end
 
