@@ -22,7 +22,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'database_cleaner'
   gem 'dotenv-rails'
-  gem 'factory_bot'
+  gem 'factory_bot_rails'
   gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
   gem 'grape-entity-matchers'
   gem 'pry-rails'

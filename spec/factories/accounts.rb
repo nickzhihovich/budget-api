@@ -9,7 +9,7 @@ FactoryBot.define do
       kind 'credit'
     end
 
-    trait :debt do
+    trait :deposit do
       kind 'deposit'
     end
   end
