@@ -10,4 +10,8 @@ class Budget < ApplicationRecord
   def current_balance
     Budgets::Balance::Current.new(self).call
   end
+
+  def available_balance
+    Budgets::Balance::Available.new(self).call
+  end
 end
