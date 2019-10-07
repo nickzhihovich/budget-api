@@ -1,10 +1,12 @@
 module V1
-  class Category < Base
-    before do
-      doorkeeper_authorize!
-    end
+  module Endpoints
+    class Category < Base
+      before do
+        doorkeeper_authorize!
+      end
 
-    namespace 'categories' do
+      namespace 'categories' do
+      end
     end
   end
 end
