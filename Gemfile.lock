@@ -120,6 +120,9 @@ GEM
       rspec (>= 3.2.0)
     grape-swagger (0.33.0)
       grape (>= 0.16.2)
+    grape-swagger-entity (0.1.6)
+      grape-entity
+      grape-swagger (>= 0.20.4)
     grape-swagger-rails (0.3.1)
       railties (>= 3.2.12)
     grape_on_rails_routes (0.3.2)
@@ -290,6 +293,7 @@ DEPENDENCIES
   grape-entity
   grape-entity-matchers
   grape-swagger
+  grape-swagger-entity
   grape-swagger-rails
   grape_on_rails_routes
   listen (>= 3.0.5, < 3.2)
