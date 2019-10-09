@@ -3,7 +3,7 @@ services:
   postgres:
     image: postgres
     ports:
-      - "5433:5432"
+      - '5433:5432'
 
   api:
     build: .
@@ -11,11 +11,14 @@ services:
     volumes:
       - .:/api
     ports:
-      - "3000:3000"
+      - '3000:3000'
     depends_on:
       - postgres
     links:
       - postgres
-    env_file:
-      - .env
+    environment:
+      RAILS_ENV: 'development'
+      POSTGRES_DATABASE_HOST: 'postgres'
+      POSTGRES_DATABASE_USERNAME: 'postgres'
+      POSTGRES_DATABASE_PASSWORD: ''
 
