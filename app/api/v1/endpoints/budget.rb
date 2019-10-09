@@ -1,9 +1,9 @@
 module V1
   module Endpoints
     class Budget < Base
-      # before do
-      #   doorkeeper_authorize!
-      # end
+      before do
+        doorkeeper_authorize!
+      end
 
       desc 'Return a list of budgets.'
       namespace 'budgets' do
@@ -24,4 +24,3 @@ module V1
     end
   end
 end
-
