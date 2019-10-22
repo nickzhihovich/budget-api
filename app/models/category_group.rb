@@ -1,5 +1,4 @@
 class CategoryGroup < ApplicationRecord
-  belongs_to :budget
   has_many :categories
 
   validates :title, :budget, presence: true
