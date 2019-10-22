@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  it { should have_many(:budgets) }
   it { should have_many(:category_groups) }
   it { should validate_presence_of(:email)}
 end

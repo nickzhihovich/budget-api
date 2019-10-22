@@ -5,7 +5,6 @@ FactoryBot.define do
     amount_currency 'BYN'
     expenses_cents { Faker::Number.number(digits: 5) }
     expenses_currency 'BYN'
-    budget
     category
     date { Faker::Date.forward(days: 53) }
   end
