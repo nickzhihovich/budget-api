@@ -8,7 +8,6 @@ class Base < Grape::API
 
   mount Auth
   mount V1::Endpoints::Category
-  mount V1::Endpoints::Budget
 
   helpers do
     def current_user
