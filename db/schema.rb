@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_06_204724) do
+ActiveRecord::Schema.define(version: 2019_10_22_190016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,25 +19,15 @@ ActiveRecord::Schema.define(version: 2019_10_06_204724) do
     t.integer "amount_cents", default: 0, null: false
     t.string "amount_currency", default: "USD", null: false
     t.string "title"
-    t.bigint "budget_id"
     t.string "kind"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["budget_id"], name: "index_accounts_on_budget_id"
   end
 
   create_table "balance_transactions", force: :cascade do |t|
     t.string "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "budgets", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_budgets_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -51,11 +41,8 @@ ActiveRecord::Schema.define(version: 2019_10_06_204724) do
 
   create_table "category_groups", force: :cascade do |t|
     t.string "title"
-    t.bigint "budget_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["budget_id"], name: "index_category_groups_on_budget_id"
-    t.index ["title", "budget_id"], name: "index_category_groups_on_title_and_budget_id", unique: true
   end
 
   create_table "monthly_budgets", force: :cascade do |t|
@@ -63,12 +50,9 @@ ActiveRecord::Schema.define(version: 2019_10_06_204724) do
     t.string "amount_currency", default: "USD", null: false
     t.integer "expenses_cents", default: 0, null: false
     t.string "expenses_currency", default: "USD", null: false
-    t.bigint "budget_id"
     t.date "date"
     t.bigint "category_id"
-    t.index ["budget_id"], name: "index_monthly_budgets_on_budget_id"
     t.index ["category_id"], name: "index_monthly_budgets_on_category_id"
-    t.index ["date", "category_id", "budget_id"], name: "index_monthly_budgets_on_date_and_category_id_and_budget_id", unique: true
   end
 
   create_table "oauth_access_tokens", force: :cascade do |t|
