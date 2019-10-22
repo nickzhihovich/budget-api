@@ -5,7 +5,6 @@ module V1
       expose :amount_cents
       expose :amount_currency
       expose :kind
-      expose :budget_id
       expose :created_at
       expose :updated_at
     end
